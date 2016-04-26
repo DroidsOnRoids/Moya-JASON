@@ -39,7 +39,7 @@
         "Moya/RxSwift": [
           "~> 6.4"
         ],
-        "Moya-ModelMapper/Core": [
+        "Moya-JASON/Core": [
 
         ],
         "RxSwift": [
@@ -54,7 +54,7 @@
         "Moya/ReactiveCocoa": [
           "~> 6.4"
         ],
-        "Moya-ModelMapper/Core": [
+        "Moya-JASON/Core": [
 
         ],
         "ReactiveCocoa": [

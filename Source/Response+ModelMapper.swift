@@ -16,7 +16,7 @@ public extension Response {
         return try T.init(json)
     }
  
-    public func mapObject<T: Mappable>(withKeyPath keyPath: String) throws -> T {
+    public func mapObject<T: Mappable>(withKeyPath keyPath: String?) throws -> T {
         let json = JSON(data)
         let jsonKeyPath = json[path: keyPath]
         return try T.init(jsonKeyPath)
@@ -31,7 +31,7 @@ public extension Response {
         return object
     }
     
-    public func mapArray<T: Mappable>(withKeyPath keyPath: String) throws -> [T] {
+    public func mapArray<T: Mappable>(withKeyPath keyPath: String?) throws -> [T] {
         let json = JSON(data)[path: keyPath]
         let object = try json.map({ json -> T in
             return try T.init(json)
