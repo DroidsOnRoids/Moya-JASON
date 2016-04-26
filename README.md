@@ -1,7 +1,7 @@
 # Moya-JSON
 ============
 
-[![CocoaPods](https://img.shields.io/cocoapods/v/Moya-ModelMapper.svg)](https://github.com/DroidsOnRoids/Moya-JASON)
+[![CocoaPods](https://img.shields.io/cocoapods/v/Moya-JASON.svg)](https://github.com/DroidsOnRoids/Moya-JASON)
 
 [JASON](https://github.com/delba/JASON) bindings for
 [Moya](https://github.com/Moya/Moya) for easier JSON serialization with [RxSwift](https://github.com/ReactiveX/RxSwift) and [ReactiveCocoa](https://github.com/ReactiveCocoa/ReactiveCocoa) bindings.
