@@ -1,0 +1,24 @@
+{
+  "name": "Moya-JASON",
+  "version": "0.1.0",
+  "summary": "A short description of Moya-JASON.",
+  "description": "",
+  "homepage": "https://github.com/<GITHUB_USERNAME>/Moya-JASON",
+  "license": "MIT",
+  "authors": {
+    "Łukasz Mróz": "lukasz.mroz@droidsonroids.pl"
+  },
+  "source": {
+    "git": "https://github.com/<GITHUB_USERNAME>/Moya-JASON.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "Moya-JASON/Classes/**/*",
+  "resource_bundles": {
+    "Moya-JASON": [
+      "Moya-JASON/Assets/*.png"
+    ]
+  }
+}

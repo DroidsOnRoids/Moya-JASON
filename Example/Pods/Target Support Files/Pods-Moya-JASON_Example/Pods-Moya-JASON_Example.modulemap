@@ -1,0 +1,6 @@
+framework module Pods_Moya_JASON_Example {
+  umbrella header "Pods-Moya-JASON_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

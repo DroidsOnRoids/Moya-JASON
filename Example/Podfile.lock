@@ -1,0 +1,14 @@
+PODS:
+  - Moya-JASON (0.1.0)
+
+DEPENDENCIES:
+  - Moya-JASON (from `../`)
+
+EXTERNAL SOURCES:
+  Moya-JASON:
+    :path: ../
+
+SPEC CHECKSUMS:
+  Moya-JASON: 88c14b5f6c2ca11449fa70282446aeabced23618
+
+COCOAPODS: 0.39.0

@@ -1,0 +1,6 @@
+framework module Moya_JASON {
+  umbrella header "Moya-JASON-umbrella.h"
+
+  export *
+  module * { export * }
+}
