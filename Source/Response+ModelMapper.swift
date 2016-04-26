@@ -11,23 +11,48 @@ import JASON
 
 public extension Response {
     
-    public func mapObject<T: Mappable>() -> T {
+    public func mapObject<T: Mappable>() throws -> T {
         let json = JSON(data)
-        return T.init(json)
+        guard let object = try T.init(json) else {
+            throw Error.JSONMapping(self)
+        }
+    
+        return object
     }
  
-    public func mapObject<T: Mappable>(withKeyPath keyPath: [Any]) -> T {
-        let json = JSON(data)[path: keyPath]
-        return T.init(json)
-    }
-    
-    public func mapArray<T: Mappable>() -> [T] {
+    public func mapObject<T: Mappable>(withKeyPath keyPath: String) throws -> T {
         let json = JSON(data)
-        return json.map(T.init)
+        let jsonKeyPath = json[path: keyPath]
+        guard let object = try T.init(jsonKeyPath) else {
+            throw Error.JSONMapping(self)
+        }
+        
+        return object
     }
     
-    public func mapArray<T: Mappable>(withKeyPath keyPath: [Any]) -> [T] {
+    public func mapArray<T: Mappable>() throws -> [T] {
+        let json = JSON(data)
+        let object = try json.map({ json -> T in
+            guard let object = try T.init(json) else {
+                throw Error.JSONMapping(self)
+            }
+            
+            return object
+        })
+        
+        return object
+    }
+    
+    public func mapArray<T: Mappable>(withKeyPath keyPath: String) throws -> [T] {
         let json = JSON(data)[path: keyPath]
-        return json.map(T.init)
+        let object = try json.map({ json -> T in
+            guard let object = try T.init(json) else {
+                throw Error.JSONMapping(self)
+            }
+            
+            return object
+        })
+        
+        return object
     }
 }

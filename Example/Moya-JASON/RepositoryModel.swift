@@ -21,7 +21,7 @@ struct Repository: Mappable {
     let language: String
     let url: String?
     
-    init(_ json: JSON) {
+    init?(_ json: JSON) throws {
         identifier  = json[.id]
         language    = json[.language]
         url         = json[.url]

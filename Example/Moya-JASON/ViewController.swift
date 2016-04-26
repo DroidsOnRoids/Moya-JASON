@@ -29,8 +29,24 @@ class ViewController: UIViewController {
         // Example of mapping array of objects
         provider.request(GitHub.Repos("mjacko")) { (result) in
             if case .Success(let response) = result {
-                let repositories: [Repository] = response.mapArray()
-                print(repositories)
+                do {
+                    let repos: [Repository] = try response.mapArray()
+                    print(repos)
+                } catch {
+                    print("There was something wrong with the mapping!")
+                }
+            }
+        }
+        
+        // Example of using keyPath
+        provider.request(GitHub.Repo("moya/moya")) { result in
+            if case .Success(let response) = result {
+                do {
+                    let user: User = try response.mapObject(withKeyPath: "owner")
+                    print(user)
+                } catch {
+                    print("There was something wrong with the mapping!")
+                }
             }
         }
     }

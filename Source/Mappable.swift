@@ -9,5 +9,5 @@
 import JASON
 
 public protocol Mappable {
-    init(_ json: JSON)
+    init?(_ json: JSON) throws
 }

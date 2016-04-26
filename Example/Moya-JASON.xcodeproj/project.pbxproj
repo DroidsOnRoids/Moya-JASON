@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		14B7424C1CCF5B1500831B9F /* GithubEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B7424B1CCF5B1500831B9F /* GithubEndpoint.swift */; };
 		14B7424E1CCF5B3300831B9F /* RepositoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B7424D1CCF5B3300831B9F /* RepositoryModel.swift */; };
+		14B742501CCF654000831B9F /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B7424F1CCF654000831B9F /* UserModel.swift */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
@@ -21,6 +22,7 @@
 		02A450FF997EBC8B54F9A134 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		14B7424B1CCF5B1500831B9F /* GithubEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GithubEndpoint.swift; sourceTree = "<group>"; };
 		14B7424D1CCF5B3300831B9F /* RepositoryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryModel.swift; sourceTree = "<group>"; };
+		14B7424F1CCF654000831B9F /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		42ED9BF591F72ED117C4A154 /* Pods_Moya_JASON_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Moya_JASON_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B68FD99DA3084A9DFA6B5E5 /* Pods-Moya-JASON_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moya-JASON_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-Moya-JASON_Example/Pods-Moya-JASON_Example.release.xcconfig"; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* Moya-JASON_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Moya-JASON_Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -89,6 +91,7 @@
 				607FACD31AFB9204008FA782 /* Supporting Files */,
 				14B7424B1CCF5B1500831B9F /* GithubEndpoint.swift */,
 				14B7424D1CCF5B3300831B9F /* RepositoryModel.swift */,
+				14B7424F1CCF654000831B9F /* UserModel.swift */,
 			);
 			name = "Example for Moya-JASON";
 			path = "Moya-JASON";
@@ -248,6 +251,7 @@
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				14B7424E1CCF5B3300831B9F /* RepositoryModel.swift in Sources */,
 				14B7424C1CCF5B1500831B9F /* GithubEndpoint.swift in Sources */,
+				14B742501CCF654000831B9F /* UserModel.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
