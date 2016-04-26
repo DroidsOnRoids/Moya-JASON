@@ -1,4 +1,4 @@
-# Moya-JSON
+# Moya-JASON
 ============
 
 [![CocoaPods](https://img.shields.io/cocoapods/v/Moya-JASON.svg)](https://github.com/DroidsOnRoids/Moya-JASON)
@@ -11,17 +11,17 @@
 ## CocoaPods
 
 ```
-pod 'Moya-JSON', '~> 0.1'
+pod 'Moya-JASON', '~> 0.1'
 ```
 
 The subspec if you want to use the bindings over RxSwift.
 ```
-pod 'Moya-ModelMapper/RxSwift', '~> 0.1'
+pod 'Moya-JASON/RxSwift', '~> 0.1'
 ```
 
 And the subspec if you want to use the bindings over ReactiveCocoa.
 ```
-pod 'Moya-ModelMapper/ReactiveCocoa', '~> 0.1'
+pod 'Moya-JASON/ReactiveCocoa', '~> 0.1'
 ```
 
 # Usage
@@ -149,4 +149,4 @@ Sunshinejr, thesunshinejr@gmail.com, <a href="https://twitter.com/thesunshinejr"
 
 ## License
 
-Moya-JSON is available under the MIT license. See the LICENSE file for more info.
+Moya-JASON is available under the MIT license. See the LICENSE file for more info.
