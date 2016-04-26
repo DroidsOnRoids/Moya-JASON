@@ -1,5 +1,17 @@
 PODS:
-  - Moya-JASON (0.1.0)
+  - Alamofire (3.3.1)
+  - JASON (2.0)
+  - Moya (6.4.0):
+    - Moya/Core (= 6.4.0)
+  - Moya-JASON (0.1.0):
+    - Moya-JASON/Core (= 0.1.0)
+  - Moya-JASON/Core (0.1.0):
+    - JASON (~> 2.0)
+    - Moya (~> 6.4)
+  - Moya/Core (6.4.0):
+    - Alamofire (~> 3.0)
+    - Result (~> 2.0)
+  - Result (2.0.0)
 
 DEPENDENCIES:
   - Moya-JASON (from `../`)
@@ -9,6 +21,10 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  Moya-JASON: 88c14b5f6c2ca11449fa70282446aeabced23618
+  Alamofire: 369bc67b6f5ac33ded3648d7bd21c5bfb91c2ecc
+  JASON: 2fc77a4fb26b5e52fe21a30477a582928879c991
+  Moya: 4d526954c8afd79820991393d40d7d8af756ceee
+  Moya-JASON: 0b5fcdf07abc5e7900b298bc50d263fa82329049
+  Result: 9e75e1111c774c6ac594e14907b15057053a7959
 
 COCOAPODS: 0.39.0

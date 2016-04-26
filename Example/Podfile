@@ -2,10 +2,4 @@ use_frameworks!
 
 target 'Moya-JASON_Example', :exclusive => true do
   pod 'Moya-JASON', :path => '../'
-end
-
-target 'Moya-JASON_Tests', :exclusive => true do
-  pod 'Moya-JASON', :path => '../'
-
-  
-end
+end  
