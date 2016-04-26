@@ -157,7 +157,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0720;
-				ORGANIZATIONNAME = CocoaPods;
+				ORGANIZATIONNAME = "Droids On Roids";
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
