@@ -21,7 +21,7 @@ struct User: Mappable {
     
     let login: String
     
-    init?(_ json: JSON) throws {
+    init(_ json: JSON) throws {
         login = json[.login]
         if login.isEmpty {
             throw UserParsingError.Login

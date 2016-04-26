@@ -44,6 +44,8 @@ class ViewController: UIViewController {
                 do {
                     let user: User = try response.mapObject(withKeyPath: "owner")
                     print(user)
+                } catch UserParsingError.Login {
+                    print("There was something wrong with login mapping!")
                 } catch {
                     print("There was something wrong with the mapping!")
                 }

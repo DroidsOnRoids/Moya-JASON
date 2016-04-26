@@ -28,22 +28,55 @@ pod 'Moya-ModelMapper/ReactiveCocoa', '~> 0.1'
 
 Create a model struct or class. It needs to implement protocol Mappable.
 
+### Example without handling errors while mapping
+
 ```swift
-import Foundation
-import Mapper
+import JASON
+import Moya_JASON
+
+private extension JSONKeys {
+    static let id       = JSONKey<Int>("id")
+    static let language = JSONKey<String>("language")
+    static let url      = JSONKey<String?>("url")
+}
 
 struct Repository: Mappable {
 
     let identifier: Int
     let language: String
-    let url: String? // Optional property
+    let url: String?
 
-    init(map: Mapper) throws {
-        try identifier = map.from("id")
-        try language = map.from("language")
-        url = map.optionalFrom("url") // Optional property
+    init(_ json: JSON) throws {
+        identifier  = json[.id]
+        language    = json[.language]
+        url         = json[.url]
     }
+}
+```
 
+### Example with handling mapping errors
+```swift
+import JASON
+import Moya_JASON
+
+public enum UserParsingError: ErrorType {
+    case Login
+}
+
+private extension JSONKeys {
+    static let login = JSONKey<String>("login")
+}
+
+struct User: Mappable {
+
+    let login: String
+
+    init(_ json: JSON) throws {
+        login = json[.login]
+        if login.isEmpty {
+            throw UserParsingError.Login
+        }
+    }
 }
 ```
 
