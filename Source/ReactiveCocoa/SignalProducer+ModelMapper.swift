@@ -12,28 +12,20 @@ import JASON
 
 /// Extension for processing Responses into Mappable objects through ObjectMapper
 extension SignalProducerType where Value == Moya.Response, Error == Moya.Error {
-    
+
     /// Maps data received from the signal into an object which implements the Mappable protocol.
     /// If the conversion fails, the signal errors.
-    public func mapObject<T: Mappable>(type: T.Type, keyPath: String? = nil) -> SignalProducer<T, Error> {
+    public func mapObject<T: Mappable>(type: T.Type, keyPath: [Any] = []) -> SignalProducer<T, Error> {
         return producer.flatMap(.Latest) { response -> SignalProducer<T, Error> in
-            guard let keyPath = keyPath else {
-                return unwrapThrowable { try response.mapObject() }
-            }
-            
             return unwrapThrowable { try response.mapObject(withKeyPath: keyPath) }
         }
     }
-    
+
     /// Maps data received from the signal into an array of objects which implement the Mappable
     /// protocol.
     /// If the conversion fails, the signal errors.
-    public func mapArray<T: Mappable>(type: T.Type, keyPath: String? = nil) -> SignalProducer<[T], Error> {
+    public func mapArray<T: Mappable>(type: T.Type, keyPath: [Any] = []) -> SignalProducer<[T], Error> {
         return producer.flatMap(.Latest) { response -> SignalProducer<[T], Error> in
-            guard let keyPath = keyPath else {
-                return unwrapThrowable { try response.mapArray() }
-            }
-            
             return unwrapThrowable { try response.mapArray(withKeyPath: keyPath) }
         }
     }
