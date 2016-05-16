@@ -11,17 +11,17 @@
 ## CocoaPods
 
 ```
-pod 'Moya-JASON', '~> 0.1'
+pod 'Moya-JASON', '~> 0.2'
 ```
 
 The subspec if you want to use the bindings over RxSwift.
 ```
-pod 'Moya-JASON/RxSwift', '~> 0.1'
+pod 'Moya-JASON/RxSwift', '~> 0.2'
 ```
 
 And the subspec if you want to use the bindings over ReactiveCocoa.
 ```
-pod 'Moya-JASON/ReactiveCocoa', '~> 0.1'
+pod 'Moya-JASON/ReactiveCocoa', '~> 0.2'
 ```
 
 # Usage
