@@ -1,0 +1,7 @@
+# Next
+
+# 0.2
+- *Breaking change* Changed functions `withKeyPath` (both `mapObject()` and `mapArray()`. Now it accepts `[Any]`, instead of `String`.
+
+# 0.1
+- Initial release. 🎉
