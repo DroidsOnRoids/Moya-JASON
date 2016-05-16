@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "Moya-JASON"
-  s.version          = "0.1.0"
+  s.version          = "0.2.0"
   s.summary          = "JASON bindings for Moya."
   s.description      = <<-EOS
   [JASON](https://github.com/delba/JASON) bindings for
