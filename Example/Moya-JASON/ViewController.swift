@@ -42,7 +42,7 @@ class ViewController: UIViewController {
         provider.request(GitHub.Repo("moya/moya")) { result in
             if case .Success(let response) = result {
                 do {
-                    let user: User = try response.mapObject(withKeyPath: "owner")
+                    let user: User = try response.mapObject(withKeyPath: ["owner"])
                     print(user)
                 } catch UserParsingError.Login {
                     print("There was something wrong with login mapping!")
