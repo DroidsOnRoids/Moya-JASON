@@ -6,14 +6,15 @@
     <a href="https://travis-ci.org/delba/JASON"><img alt="Travis Status" src="https://img.shields.io/travis/delba/JASON.svg"/></a>
     <a href="https://img.shields.io/cocoapods/v/JASON.svg"><img alt="CocoaPods compatible" src="https://img.shields.io/cocoapods/v/JASON.svg"/></a>
     <a href="https://github.com/Carthage/Carthage"><img alt="Carthage compatible" src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat"/></a>
+    <a href="https://img.shields.io/cocoapods/p/JASON.svg"><img alt="Platform" src="https://img.shields.io/cocoapods/p/JASON.svg"/></a>
 </p>
 
-**`JASON`** is a faster JSON deserializer written in Swift.
+**JASON** is a [faster](https://github.com/delba/JASON/tree/benchmarks) `JSON` deserializer written in Swift.
 
 ```md
 JASON is the best framework we found to manage JSON at Swapcard. This is by far the fastest and
 the most convenient out there, it made our code clearer and improved the global performance
-of the app when dealing with large amout of data.
+of the app when dealing with large amount of data.
 ```
 > *[Gautier Gédoux](https://github.com/gautier-gdx), lead iOS developer at [Swapcard](https://www.swapcard.com/)*
 
@@ -53,6 +54,8 @@ Alamofire.request(.GET, peopleURL).responseJASON { response in
     }
 }
 ```
+
+If you're using [`Moya`](https://github.com/Moya/Moya), check out [`Moya-JASON`](https://github.com/DroidsOnRoids/Moya-JASON)!
 
 #### Parsing
 
@@ -117,17 +120,26 @@ You might find more convenient to extend `JSONKeys` as shown in the [Example sec
 
 *See the [References section](https://github.com/delba/JASON#references) for the full list of `JSONKey` types.*
 
+#### Third-party libraries:
+
+- [DroidsOnRoids/**Moya-JASON**](https://github.com/DroidsOnRoids/Moya-JASON) JASON bindings for Moya.
+
 ## Example
 
 > This example uses the **Dribbble API** ([docs](http://developer.dribbble.com/v1/)).
 <br/>
-> An example of the server response can be find in [`Tests/Supporting Files/shots.json`](https://github.com/delba/JASON/blob/master/Tests/Supporting%20Files/shots.json)
+> An example of the server response can be found in [`Tests/Supporting Files/shots.json`](https://github.com/delba/JASON/blob/master/Tests/Supporting%20Files/shots.json)
 
 - **Step 1:** Extend `JSONKeys` to define your `JSONKey`
 
 ```swift
+JSON.dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+
 extension JSONKeys {
     static let id    = JSONKey<Int>("id")
+    static let createdAt = JSONKey<NSDate?>("created_at")
+    static let updatedAt = JSONKey<NSDate?>("updated_at")
+    
     static let title = JSONKey<String>("title")
     
     static let normalImageURL = JSONKey<NSURL?>(path: "images", "normal")
@@ -145,8 +157,11 @@ struct Shot {
     let id: Int
     let title: String
     
-    var normalImageURL: NSURL!
+    let normalImageURL: NSURL
     var hidpiImageURL: NSURL?
+    
+    let createdAt: NSDate
+    let updatedAt: NSDate
     
     let user: User
 
@@ -154,8 +169,11 @@ struct Shot {
         id    = json[.id]
         title = json[.title]
         
-        normalImageURL = json[.normalImageURL]
+        normalImageURL = json[.normalImageURL]!
         hidpiImageURL  = json[.hidpiImageURL]
+        
+        createdAt = json[.createdAt]!
+        updatedAt = json[.updatedAt]!
         
         user = User(json[.user])
     }
@@ -166,10 +184,16 @@ struct Shot {
 struct User {
     let id: Int
     let name: String
+    
+    let createdAt: NSDate
+    let updatedAt: NSDate
 
     init(_ json: JSON) {
         id   = json[.id]
         name = json[.name]
+        
+        createdAt = json[.createdAt]!
+        updatedAt = json[.updatedAt]!
     }
 }
 ```
@@ -198,10 +222,13 @@ Property              | JSONKey Type           | Default value
 `doubleValue`         | `Double`               | `0.0`
 `float`               | `Float?`               |
 `floatValue`          | `Float`                | `0.0`
+`nsNumber`            | `NSNumber?`            |
+`nsNumberValue`       | `NSNumber`             | `0`
 `cgFloat`             | `CGFloat?`             |
 `cgFloatValue`        | `CGFloat`              | `0.0`
 `bool`                | `Bool?`                |
 `boolValue`           | `Bool`                 | `false`
+`nsDate`              | `NSDate?`              |
 `nsURL`               | `NSURL?`               |
 `dictionary`          | `[String: AnyObject]?` |
 `dictionaryValue`     | `[String: AnyObject]`  | `[:]`
@@ -215,6 +242,8 @@ Property              | JSONKey Type           | Default value
 `jsonArrayValue`      | `[JSON]`               | `[]`
 `nsArray`             | `NSArray?`             |
 `nsArrayValue`        | `NSArray`              | `NSArray()`
+
+> Configure JSON.dateFormatter if needed for `nsDate` parsing
 
 ## Installation
 
@@ -232,7 +261,7 @@ $ brew install carthage
 To integrate **`JASON`** into your Xcode project using Carthage, specify it in your `Cartfile`:
 
 ```ogdl
-github "delba/JASON" >= 2.0
+github "delba/JASON" >= 2.2
 ```
 
 #### CocoaPods
@@ -250,7 +279,7 @@ To integrate **`JASON`** into your Xcode project using CocoaPods, specify it in 
 ```ruby
 use_frameworks!
 
-pod 'JASON', '~> 2.0'
+pod 'JASON', '~> 2.2'
 ```
 
 ## License

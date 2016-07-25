@@ -15,16 +15,15 @@
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
-		DE9D3584A293DC751EE82945 /* Pods_Moya_JASON_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80E76788AED20A1F2F536B2B /* Pods_Moya_JASON_Example.framework */; };
+		90268C6253B5B8E6948581D9 /* Pods_Moya_JASON_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDDF4C8074138217FC39C906 /* Pods_Moya_JASON_Example.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		00876F58F23FE059A73798E9 /* Pods-Moya-JASON_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moya-JASON_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-Moya-JASON_Example/Pods-Moya-JASON_Example.release.xcconfig"; sourceTree = "<group>"; };
 		02A450FF997EBC8B54F9A134 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		14B7424B1CCF5B1500831B9F /* GithubEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GithubEndpoint.swift; sourceTree = "<group>"; };
 		14B7424D1CCF5B3300831B9F /* RepositoryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryModel.swift; sourceTree = "<group>"; };
 		14B7424F1CCF654000831B9F /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
-		42ED9BF591F72ED117C4A154 /* Pods_Moya_JASON_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Moya_JASON_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5B68FD99DA3084A9DFA6B5E5 /* Pods-Moya-JASON_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moya-JASON_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-Moya-JASON_Example/Pods-Moya-JASON_Example.release.xcconfig"; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* Moya-JASON_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Moya-JASON_Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -32,12 +31,10 @@
 		607FACDA1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		607FACDC1AFB9204008FA782 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		80E76788AED20A1F2F536B2B /* Pods_Moya_JASON_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Moya_JASON_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		91AFBADBEA56884E7AB5A6D9 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		A067F9FF7B90B22A16CC90FB /* Pods-Moya-JASON_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moya-JASON_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Moya-JASON_Example/Pods-Moya-JASON_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		B5091E9931E45C723D27C674 /* Pods-Moya-JASON_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moya-JASON_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Moya-JASON_Tests/Pods-Moya-JASON_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		CA07BCAA90D446FE48AE3C89 /* Moya-JASON.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = "Moya-JASON.podspec"; path = "../Moya-JASON.podspec"; sourceTree = "<group>"; };
-		CE2841D53E3A959A7C30017E /* Pods-Moya-JASON_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moya-JASON_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Moya-JASON_Tests/Pods-Moya-JASON_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		EDDF4C8074138217FC39C906 /* Pods_Moya_JASON_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Moya_JASON_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF223B221BE6F964B4ED364A /* Pods-Moya-JASON_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moya-JASON_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Moya-JASON_Example/Pods-Moya-JASON_Example.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,18 +42,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DE9D3584A293DC751EE82945 /* Pods_Moya_JASON_Example.framework in Frameworks */,
+				90268C6253B5B8E6948581D9 /* Pods_Moya_JASON_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		261226E04DFF68E6BEBFDA64 /* Frameworks */ = {
+		10A37334C1798E22ACAAC266 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				80E76788AED20A1F2F536B2B /* Pods_Moya_JASON_Example.framework */,
-				42ED9BF591F72ED117C4A154 /* Pods_Moya_JASON_Tests.framework */,
+				EDDF4C8074138217FC39C906 /* Pods_Moya_JASON_Example.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -67,8 +63,8 @@
 				607FACF51AFB993E008FA782 /* Podspec Metadata */,
 				607FACD21AFB9204008FA782 /* Example for Moya-JASON */,
 				607FACD11AFB9204008FA782 /* Products */,
-				FF3031CFD5C4790BB1261A07 /* Pods */,
-				261226E04DFF68E6BEBFDA64 /* Frameworks */,
+				994B2293CB6ED9BC8359CBA7 /* Pods */,
+				10A37334C1798E22ACAAC266 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -115,13 +111,11 @@
 			name = "Podspec Metadata";
 			sourceTree = "<group>";
 		};
-		FF3031CFD5C4790BB1261A07 /* Pods */ = {
+		994B2293CB6ED9BC8359CBA7 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				A067F9FF7B90B22A16CC90FB /* Pods-Moya-JASON_Example.debug.xcconfig */,
-				5B68FD99DA3084A9DFA6B5E5 /* Pods-Moya-JASON_Example.release.xcconfig */,
-				CE2841D53E3A959A7C30017E /* Pods-Moya-JASON_Tests.debug.xcconfig */,
-				B5091E9931E45C723D27C674 /* Pods-Moya-JASON_Tests.release.xcconfig */,
+				EF223B221BE6F964B4ED364A /* Pods-Moya-JASON_Example.debug.xcconfig */,
+				00876F58F23FE059A73798E9 /* Pods-Moya-JASON_Example.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -133,12 +127,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 607FACEF1AFB9204008FA782 /* Build configuration list for PBXNativeTarget "Moya-JASON_Example" */;
 			buildPhases = (
-				6BB484EDFBEA727A80EAC0E1 /* Check Pods Manifest.lock */,
+				0D66E7053F0A408174D6D2D6 /* [CP] Check Pods Manifest.lock */,
 				607FACCC1AFB9204008FA782 /* Sources */,
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
-				B6F9CEC12649D3CC4727AD0C /* Embed Pods Frameworks */,
-				8A39825679A873837B805FC4 /* Copy Pods Resources */,
+				A4940062D9D73817063CBD92 /* [CP] Embed Pods Frameworks */,
+				5609586A2697389D9D1DB5A7 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -196,14 +190,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		6BB484EDFBEA727A80EAC0E1 /* Check Pods Manifest.lock */ = {
+		0D66E7053F0A408174D6D2D6 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -211,14 +205,14 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		8A39825679A873837B805FC4 /* Copy Pods Resources */ = {
+		5609586A2697389D9D1DB5A7 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -226,14 +220,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Moya-JASON_Example/Pods-Moya-JASON_Example-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B6F9CEC12649D3CC4727AD0C /* Embed Pods Frameworks */ = {
+		A4940062D9D73817063CBD92 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -362,7 +356,7 @@
 		};
 		607FACF01AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A067F9FF7B90B22A16CC90FB /* Pods-Moya-JASON_Example.debug.xcconfig */;
+			baseConfigurationReference = EF223B221BE6F964B4ED364A /* Pods-Moya-JASON_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Moya-JASON/Info.plist";
@@ -375,7 +369,7 @@
 		};
 		607FACF11AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5B68FD99DA3084A9DFA6B5E5 /* Pods-Moya-JASON_Example.release.xcconfig */;
+			baseConfigurationReference = 00876F58F23FE059A73798E9 /* Pods-Moya-JASON_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Moya-JASON/Info.plist";

@@ -60,6 +60,11 @@ extension JSON {
     /// The value as a 32-bit floating-point number or 0.0 if not present/convertible
     public var floatValue: Float { return float ?? 0 }
     
+    /// The value as a NSNumber or nil if not present/convertible
+    public var nsNumber: NSNumber? { return object as? NSNumber }
+    /// The value as a NSNumber or 0 if not present/convertible
+    public var nsNumberValue: NSNumber { return nsNumber ?? 0 }
+    
     /// The value as a CGFloat or nil if not present/convertible
     public var cgFloat: CGFloat? { return object as? CGFloat }
     /// The value as a CGFloat or 0.0 if not present/convertible
@@ -75,11 +80,23 @@ extension JSON {
     public var boolValue: Bool { return bool ?? false }
 }
 
+// MARK: - NSDate
+
+extension JSON {
+    /// The value as a NSDate or nil if not present/convertible
+    public var nsDate: NSDate? { return JSON.dateFormatter.dateFromString(stringValue) }
+}
+
 // MARK: - NSURL
 
 extension JSON {
     /// The value as an instance of NSURL or nil if not convertible
-    public var nsURL: NSURL? { return NSURL(string: stringValue) }
+    public var nsURL: NSURL? {
+        if let string = string?.stringByAddingPercentEncodingWithAllowedCharacters(.URLQueryAllowedCharacterSet()) {
+            return NSURL(string: string)
+        }
+        return nil
+    }
 }
 
 // MARK: - Dictionary

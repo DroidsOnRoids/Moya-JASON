@@ -25,6 +25,9 @@
 // MARK: - Initializers
 
 public struct JSON {
+    /// The date formatter used for date conversions
+    public static var dateFormatter = NSDateFormatter()
+    
     /// The object on which any subsequent method operates
     public let object: AnyObject?
 
@@ -148,14 +151,8 @@ private extension JSON {
         - returns: An instance of AnyObject or nil
     */
     static func objectWithData(data: NSData?) -> AnyObject? {
-        if let data = data {
-            do {
-                return try NSJSONSerialization.JSONObjectWithData(data, options: [])
-            } catch _ {
-                return nil
-            }
-        }
-
-        return nil
+        guard let data = data else { return nil }
+        
+        return try? NSJSONSerialization.JSONObjectWithData(data, options: [])
     }
 }
