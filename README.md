@@ -11,17 +11,17 @@
 ## CocoaPods
 
 ```
-pod 'Moya-JASON', '~> 0.2'
+pod 'Moya-JASON', '1.0.0-beta.1'
 ```
 
 The subspec if you want to use the bindings over RxSwift.
 ```
-pod 'Moya-JASON/RxSwift', '~> 0.2'
+pod 'Moya-JASON/RxSwift', '1.0.0-beta.1'
 ```
 
 And the subspec if you want to use the bindings over ReactiveCocoa.
 ```
-pod 'Moya-JASON/ReactiveCocoa', '~> 0.2'
+pod 'Moya-JASON/ReactiveCocoa', '1.0.0-beta.1'
 ```
 
 # Usage
@@ -59,8 +59,8 @@ struct Repository: Mappable {
 import JASON
 import Moya_JASON
 
-public enum UserParsingError: ErrorType {
-    case Login
+public enum UserParsingError: Error {
+    case login
 }
 
 private extension JSONKeys {
@@ -74,7 +74,7 @@ struct User: Mappable {
     init(_ json: JSON) throws {
         login = json[.login]
         if login.isEmpty {
-            throw UserParsingError.Login
+            throw UserParsingError.login
         }
     }
 }
@@ -96,8 +96,8 @@ fetch. For example `mapObject(withKeyPath: "owner")`. `RxSwift` and `ReactiveCoc
 
 ```swift
 provider = MoyaProvider<GitHub>()
-provider.request(GitHub.Repos("mjacko")) { (result) in
-    if case .Success(let response) = result {
+provider.request(GitHub.repos("mjacko")) { (result) in
+    if case .success(let response) = result {
         do {
             let repos: [Repository] = try response.mapArray()
             print(repos)
@@ -112,13 +112,13 @@ provider.request(GitHub.Repos("mjacko")) { (result) in
 ```swift
 provider = RxMoyaProvider<GitHub>()
 provider
-    .request(GitHub.Repo("Moya/Moya"))
+    .request(GitHub.repo("Moya/Moya"))
     .mapObject(User.self, keyPath: "owner")
     .subscribe { event in
         switch event {
-        case .Next(let user):
+        case .next(let user):
             print(user)
-        case .Error(let error):
+        case .error(let error):
             print(error)
         default: break
         }
@@ -129,14 +129,14 @@ provider
 ```swift
 provider = ReactiveCocoaMoyaProvider<GitHub>()
 provider
-    .request(GitHub.Repos("mjacko"))
+    .request(GitHub.repos("mjacko"))
     .mapArray(Repository.self)
     .observeOn(UIScheduler())
     .start { event in
         switch event {
-        case .Next(let repos):
+        case .value(let repos):
             print(repos)
-        case .Failed(let error):
+        case .failed(let error):
             print(error)
         default: break
         }
