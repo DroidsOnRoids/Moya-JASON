@@ -18,7 +18,7 @@ public extension ObservableType where E == Response {
     /// implements the Mappable protocol and returns the result back on the MainScheduler.
     /// If the conversion fails, the signal errors.
     public func mapObject<T: Mappable>(type: T.Type, keyPath: [Any] = []) -> Observable<T> {
-        return observeOn(SerialDispatchQueueScheduler(globalConcurrentQueueQOS: .Background))
+        return observeOn(SerialDispatchQueueScheduler(qos: .background))
             .flatMap { response -> Observable<T> in
                 return Observable.just(try response.mapObject(withKeyPath: keyPath))
             }
@@ -29,7 +29,7 @@ public extension ObservableType where E == Response {
     /// which implement the Mappable protocol and returns the result back on the MainScheduler
     /// If the conversion fails, the signal errors.
     public func mapArray<T: Mappable>(type: T.Type, keyPath: [Any] = []) -> Observable<[T]> {
-        return observeOn(SerialDispatchQueueScheduler(globalConcurrentQueueQOS: .Background))
+        return observeOn(SerialDispatchQueueScheduler(qos: .background))
             .flatMap { response -> Observable<[T]> in
                 return Observable.just(try response.mapArray(withKeyPath: keyPath))
             }

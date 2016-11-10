@@ -44,7 +44,7 @@ Pod::Spec.new do |s|
 
   s.subspec "ReactiveCocoa" do |ss|
     ss.source_files = "Source/ReactiveCocoa/*.swift"
-    ss.dependency "Moya/ReactiveCocoa", "8.0.0-alpha.4"
+    ss.dependency "Moya/ReactiveCocoa", "8.0.0-beta.4"
     ss.dependency "Moya-JASON/Core"
     ss.dependency "ReactiveSwift", "1.0.0-alpha.3"
   end

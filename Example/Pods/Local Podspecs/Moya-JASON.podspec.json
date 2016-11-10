@@ -52,7 +52,7 @@
       "source_files": "Source/ReactiveCocoa/*.swift",
       "dependencies": {
         "Moya/ReactiveCocoa": [
-          "8.0.0-alpha.4"
+          "8.0.0-beta.4"
         ],
         "Moya-JASON/Core": [
 
