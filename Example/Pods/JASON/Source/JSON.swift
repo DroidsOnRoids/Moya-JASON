@@ -26,7 +26,7 @@
 
 public struct JSON {
     /// The date formatter used for date conversions
-    public static var dateFormatter = NSDateFormatter()
+    public static var dateFormatter = DateFormatter()
     
     /// The object on which any subsequent method operates
     public let object: AnyObject?
@@ -38,7 +38,7 @@ public struct JSON {
 
         - returns: the created JSON
     */
-    public init(_ object: AnyObject?) {
+    public init(_ object: Any?) {
         self.init(object: object)
     }
 
@@ -49,7 +49,7 @@ public struct JSON {
 
         - returns: the created JSON
     */
-    public init(_ data: NSData?) {
+    public init(_ data: Data?) {
         self.init(object: JSON.objectWithData(data))
     }
 
@@ -61,8 +61,8 @@ public struct JSON {
 
         - returns: the created JSON
     */
-    internal init(object: AnyObject?) {
-        self.object = object
+    internal init(object: Any?) {
+        self.object = object as AnyObject?
     }
 }
 
@@ -120,12 +120,12 @@ extension JSON {
         var json = self
         
         for index in indexes {
-            if let string = index as? String, object = json.nsDictionary?[string] {
+            if let string = index as? String, let object = json.nsDictionary?[string] {
                 json = JSON(object)
                 continue
             }
             
-            if let int = index as? Int, object = json.nsArray?[safe: int] {
+            if let int = index as? Int, let object = json.nsArray?[safe: int] {
                 json = JSON(object)
                 continue
             }
@@ -150,9 +150,10 @@ private extension JSON {
 
         - returns: An instance of AnyObject or nil
     */
-    static func objectWithData(data: NSData?) -> AnyObject? {
+    static func objectWithData(_ data: Data?) -> Any? {
         guard let data = data else { return nil }
         
-        return try? NSJSONSerialization.JSONObjectWithData(data, options: [])
+        return try? JSONSerialization.jsonObject(with: data, options: [])
     }
 }
+

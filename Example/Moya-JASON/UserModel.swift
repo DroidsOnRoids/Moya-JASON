@@ -9,8 +9,8 @@
 import JASON
 import Moya_JASON
 
-public enum UserParsingError: ErrorType {
-    case Login
+public enum UserParsingError: Error {
+    case login
 }
 
 private extension JSONKeys {
@@ -24,7 +24,7 @@ struct User: Mappable {
     init(_ json: JSON) throws {
         login = json[.login]
         if login.isEmpty {
-            throw UserParsingError.Login
+            throw UserParsingError.login
         }
     }
 }

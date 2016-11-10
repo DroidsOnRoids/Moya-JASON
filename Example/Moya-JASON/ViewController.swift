@@ -27,8 +27,8 @@ class ViewController: UIViewController {
         provider = MoyaProvider<GitHub>()
         
         // Example of mapping array of objects
-        provider.request(GitHub.Repos("mjacko")) { (result) in
-            if case .Success(let response) = result {
+        provider.request(GitHub.repos("mjacko")) { (result) in
+            if case .success(let response) = result {
                 do {
                     let repos: [Repository] = try response.mapArray()
                     print(repos)
@@ -39,12 +39,12 @@ class ViewController: UIViewController {
         }
         
         // Example of using keyPath
-        provider.request(GitHub.Repo("moya/moya")) { result in
-            if case .Success(let response) = result {
+        provider.request(GitHub.repo("moya/moya")) { result in
+            if case .success(let response) = result {
                 do {
                     let user: User = try response.mapObject(withKeyPath: ["owner"])
                     print(user)
-                } catch UserParsingError.Login {
+                } catch UserParsingError.login {
                     print("There was something wrong with login mapping!")
                 } catch {
                     print("There was something wrong with the mapping!")

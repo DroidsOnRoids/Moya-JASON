@@ -1,7 +1,9 @@
 [![CircleCI](https://circleci.com/gh/Moya/Moya.svg?style=svg)](https://circleci.com/gh/Moya/Moya) [![codecov.io](https://codecov.io/github/Moya/Moya/coverage.svg?branch=master)](https://codecov.io/github/Moya/Moya?branch=master)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
-![Moya Logo](web/moya_logo_github.png)
+<p align="center">
+  <img height="160" src="web/logo_github.png" />
+</p>
 
 You're a smart developer. You probably use [Alamofire](https://github.com/Alamofire/Alamofire) to abstract away access to
 NSURLSession and all those nasty details you don't really care about. But then,
@@ -33,7 +35,7 @@ Some awesome features of Moya:
 Sample Project
 --------------
 
-There's a sample project in the Demo directory. Have fun!
+There's a sample project in the Demo directory. To use it, run `pod install` to download the required libraries. Have fun!
 
 Project Status
 --------------
@@ -47,23 +49,46 @@ Currently, we support Xcode 7 and Swift 2.
 Installation
 ------------
 
+### Moya version vs Swift version.
+
+Because of the many Swift versions Moya supports, it might be confusing to
+find the version of Moya that you need. Below is a table that shows which version of Moya
+you should use for your Swift version.
+
+| Swift version | Moya version    |
+| ------------- | --------------- |
+| 3.X           | >= 8.0.0-beta.1 |
+| 2.3           | 7.0.2 - 7.0.3   |
+| 2.2           | <= 7.0.1        |
+
 ### CocoaPods
-Just add `pod 'Moya'` to your Podfile and go!
+
+For Moya, use the following entry in your Podfile:
+
+```rb
+pod 'Moya', '8.0.0-beta.2'
+```
 
 In any file you'd like to use Moya in, don't forget to
 import the framework with `import Moya`.
 
 For RxSwift or ReactiveCocoa extensions, this project will include
-them as dependencies. You can do this via CocoaPods subspecs.
+them as dependencies. You can do this via CocoaPods subspecs, but you will also
+need to include the pre-release versions of RxSwift or ReactiveSwift manually.
 
 ```rb
 pod 'Moya/RxSwift'
+
+# or
+
 pod 'Moya/ReactiveCocoa'
+pod 'ReactiveSwift', '1.0.0-alpha.3'
 ```
 
 Then run `pod install`.
 
 ### Carthage
+
 Carthage users can point to this repository and use whichever
 generated framework they'd like, `Moya`, `RxMoya`, or `ReactiveMoya`.
 The full Moya framework is bundled in each of those frameworks;
@@ -81,17 +106,17 @@ After [some setup](docs/Examples/Basic.md), using Moya is really simple. You can
 
 ```swift
 provider = MoyaProvider<GitHub>()
-provider.request(.Zen) { result in
+provider.request(.zen) { result in
     switch result {
-    case let .Success(moyaResponse):
+    case let .success(moyaResponse):
         let data = moyaResponse.data
         let statusCode = moyaResponse.statusCode
         // do something with the response data or statusCode
-    case let .Failure(error):
+    case let .failure(error):
         // this means there was a network failure - either the request
         // wasn't sent (connectivity), or no response was received (server
         // timed out).  If the server responds with a 4xx or 5xx error, that
-        // will be sent as a ".Success"-ful response.
+        // will be sent as a ".success"-ful response.
     }
 }
 ```
@@ -101,7 +126,7 @@ into the enum you use to access the endpoint, like this:
 
 ```swift
 provider = MoyaProvider<GitHub>()
-provider.request(.UserProfile("ashfurrow")) { result in
+provider.request(.userProfile("ashfurrow")) { result in
     // do something with the result
 }
 ```
@@ -122,16 +147,16 @@ Even cooler are the reactive extensions. Moya provides reactive extensions for
 
 After `ReactiveCocoa` [setup](docs/ReactiveCocoa.md), `request(:)` method
 immediately returns a `SignalProducer` (`RACSignal` is also available if needed)
-that you can start or bind or map or whateveryou want to do. To handle errors,
+that you can start or bind or map or whatever you want to do. To handle errors,
 for instance, we could do the following:
 
 ```swift
 provider = ReactiveCocoaMoyaProvider<GitHub>()
-provider.request(.UserProfile("ashfurrow")).start { (event) -> Void in
+provider.request(.userProfile("ashfurrow")).start { event in
     switch event {
-    case .Next(let response):
+    case let .value(response):
         image = UIImage(data: response.data)
-    case .Failed(let error):
+    case let .failed(error):
         print(error)
     default:
       break
@@ -147,11 +172,11 @@ want to do. To handle errors, for instance, we could do the following:
 
 ```swift
 provider = RxMoyaProvider<GitHub>()
-provider.request(.UserProfile("ashfurrow")).subscribe { (event) -> Void in
+provider.request(.userProfile("ashfurrow")).subscribe { event in
     switch event {
-    case .Next(let response):
+    case let .next(response):
         image = UIImage(data: response.data)
-    case .Error(let error):
+    case let .error(error):
         print(error)
     default:
         break
@@ -180,6 +205,8 @@ Moya has a great community around it and some people have created some very help
 - [Moya-ModelMapper](https://github.com/sunshinejr/Moya-ModelMapper) - ModelMapper bindings for Moya for easier JSON serialization
 - [Moya-Gloss](https://github.com/spxrogers/Moya-Gloss) - Gloss bindings for Moya for easier JSON serialization
 - [Moya-JASON](https://github.com/DroidsOnRoids/Moya-JASON) - JASON bindings for Moya for easier JSON serialization
+- [Moya-Unbox](https://github.com/RyogaK/Moya-Unbox) - Unbox bindings for Moya for easier JSON serialization
+- [MoyaSugar](https://github.com/devxoul/MoyaSugar) – Syntactic sugar for Moya
 
 We appreciate all the work being done by the community around Moya. If you would like to have your extension featured in the list above, simply create a pull request adding your extensions to the list.
 
@@ -201,9 +228,15 @@ following:
 
 If any of that sounds cool to you, send a pull request! After a few
 contributions, we'll add you as an admin to the repo so you can merge pull
-requests and help steer the ship :ship:
+requests and help steer the ship :ship: You can read more details about that [in our contributor guidelines](https://github.com/Moya/contributors).
+
+Moya's community has a tremendous positive energy, and the maintainers are committed to keeping things awesome. Like [in the CocoaPods community](https://github.com/CocoaPods/CocoaPods/wiki/Communication-&-Design-Rules), always assume positive intent; even if a comment sounds mean-spirited, give the person the benefit of the doubt.
 
 Please note that this project is released with a Contributor Code of Conduct. By participating in this project you agree to abide by [its terms](https://github.com/Moya/contributors/blob/master/Code of Conduct.md).
+
+### Adding new source files
+
+If you add or remove a source file from Moya, a corresponding change needs to be made to the `Moya.xcodeproj` project at the root of this repository. This project is used for Carthage. Don't worry, you'll get an automated warning when submitting a pull request if you forget.
 
 License
 -------
