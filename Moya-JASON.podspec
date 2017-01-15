@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "Moya-JASON"
-  s.version          = "1.0.0-beta.1"
+  s.version          = "1.0.0"
   s.summary          = "JASON bindings for Moya."
   s.description      = <<-EOS
   [JASON](https://github.com/delba/JASON) bindings for
@@ -30,22 +30,22 @@ Pod::Spec.new do |s|
 
   s.subspec "Core" do |ss|
     ss.source_files  = "Source/*.swift"
-    ss.dependency "Moya", "8.0.0-beta.4"
-    ss.dependency "JASON", "~> 3.0"
+    ss.dependency "Moya", "~> 8.0.0"
+    ss.dependency "JASON"
     ss.framework  = "Foundation"
   end
 
   s.subspec "RxSwift" do |ss|
     ss.source_files = "Source/RxSwift/*.swift"
-    ss.dependency "Moya/RxSwift", "8.0.0-beta.4"
+    ss.dependency "Moya/RxSwift", "~> 8.0.0"
     ss.dependency "Moya-JASON/Core"
-    ss.dependency "RxSwift", "~> 3.0.0"
+    ss.dependency "RxSwift"
   end
 
   s.subspec "ReactiveCocoa" do |ss|
     ss.source_files = "Source/ReactiveCocoa/*.swift"
-    ss.dependency "Moya/ReactiveCocoa", "8.0.0-beta.4"
+    ss.dependency "Moya/ReactiveCocoa", "~8.0.0"
     ss.dependency "Moya-JASON/Core"
-    ss.dependency "ReactiveSwift", "1.0.0-alpha.3"
+    ss.dependency "ReactiveSwift"
   end
   end

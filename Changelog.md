@@ -1,5 +1,9 @@
 # Next
 
+# 1.0.0
+- Moya updated to 8.0.0
+- ReactiveSwift updated to 1.0.0
+
 # 1.0.0-beta.1
 - JASON updated to 3.0
 - Moya updated to 8.0.0-beta.4
