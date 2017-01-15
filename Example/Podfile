@@ -1,5 +1,5 @@
 use_frameworks!
 
 target 'Moya-JASON_Example' do
-  pod 'Moya-JASON', :path => '../'
+  pod "Moya-JASON", :path => "../"
 end

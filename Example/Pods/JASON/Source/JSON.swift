@@ -52,6 +52,17 @@ public struct JSON {
     public init(_ data: Data?) {
         self.init(object: JSON.objectWithData(data))
     }
+    
+    /**
+        Creates an instance of JSON from a string.
+
+        - parameter data: A string
+
+        - returns: the created JSON
+    */
+    public init(_ string: String?) {
+        self.init(string?.data(using: String.Encoding.utf8))
+    }
 
     /**
         Creates an instance of JSON from AnyObject.
@@ -131,7 +142,7 @@ extension JSON {
             }
             
             else {
-                json = JSON(nil)
+                json = JSON(object: nil)
                 break
             }
         }
@@ -153,7 +164,7 @@ private extension JSON {
     static func objectWithData(_ data: Data?) -> Any? {
         guard let data = data else { return nil }
         
-        return try? JSONSerialization.jsonObject(with: data, options: [])
+        return try? JSONSerialization.jsonObject(with: data)
     }
 }
 

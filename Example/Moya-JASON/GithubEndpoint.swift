@@ -53,8 +53,10 @@ extension GitHub: TargetType {
             return "{\"id\": \"1\", \"language\": \"Swift\", \"url\": \"https://api.github.com/repos/mjacko/Router\", \"name\": \"Router\"}".data(using: .utf8)!
         }
     }
-    
     var task: Task {
         return .request
+    }
+    var parameterEncoding: ParameterEncoding {
+        return JSONEncoding.default
     }
 }
