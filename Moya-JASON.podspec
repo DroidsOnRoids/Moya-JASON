@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "Moya-JASON"
-  s.version          = "1.0.0"
+  s.version          = "1.1.0"
   s.summary          = "JASON bindings for Moya."
   s.description      = <<-EOS
   [JASON](https://github.com/delba/JASON) bindings for
@@ -24,7 +24,11 @@ Pod::Spec.new do |s|
   s.source           = { :git => "https://github.com/DroidsOnRoids/Moya-JASON.git", :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/thesunshinejr'
 
-  s.platform     = :ios, '9.0'
+  s.ios.deployment_target = '8.0'
+  s.osx.deployment_target = '10.10'
+  s.watchos.deployment_target = '2.0'
+  s.tvos.deployment_target = '9.0'
+
   s.requires_arc = true
   s.default_subspec = "Core"
 
